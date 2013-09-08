@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CameraKit Sample</title>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script src="camerakit.js"></script>
+</head>
+<body>
+
+  <button id="trigger">Take Photo</button> <br/>
+  <img id="output" src=""/>
+
+<script>
+
+  // Set up and request access to the camera
+  var camera = new CameraKit();
+
+  // Get a new image from the camera, and update the image element.
+  var image  = document.querySelector('#output');
+  function updateImage(){
+    image.setAttribute('src', camera.getImage());
+  };
+
+  // Update the image on click.
+  var trigger = document.querySelector('#trigger');
+  trigger.addEventListener("click", updateImage);
+
+</script>
+
+
+</body>
+</html>
