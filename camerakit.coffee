@@ -33,6 +33,9 @@ class @CameraKit
     @canvas.getContext('2d').drawImage @video, 0, 0, @width, @height
     data = @canvas.toDataURL "image/png"
 
+  getData: ->
+    data = @canvas.getContext('2d').getImageData 0, 0, @width, @height
+
   # First, add the camera element to the DOM
   _appendCameraElement: ->
 

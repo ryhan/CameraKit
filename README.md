@@ -2,7 +2,7 @@
 
 A slightly nicer way to access a webcam from within a browser. Built by [Ryhan](https://github.com/ryhan).
 
-#### Start by intializing a new instance of `CameraKit`. 
+#### Start by intializing a new instance of `CameraKit`.
 
 This should cause the browser to prompt the user about allowing access to the camera.
 ```javascript
@@ -31,3 +31,7 @@ var new_image = camera.getImage();
 // ... and set it as the source of your <img /> element.
 some_image_element.setAttribute('src', new_image);
 ```
+
+#### Perform some operation on the image from the camera
+
+Call `getData()` on your `CameraKit` object. You'll be returned an `ImageData` object containing height, width, and an array of arrays containing rgba values.
